@@ -1,0 +1,28 @@
+Ejercicio 1 :
+
+1.- //--> Definir una variable de tipo entero de nombre "x", crear un puntero hacia un entero de nombre "p".
+2.- //--> Definir una variable de tipo entero de nombre "y", crear un puntero hacua un entero de nombre "puntero".
+3.- //--> Inicializar la variable "x" con valor 10
+4.- //--> Asignar la direccion en memoria de la variable "x" al puntero "p".
+5.- //--> Imprimir el contenido del puntero "p".
+6.- //--> Sumar 1 al contenido del puntero "p" y almacenarlo en el mismo puntero "p"
+7.- //--> Imprimir el contenido del puntero "p".
+8.- //--> Sumar 2 al contenido del puntero "p" y almacenarlo en el mismo puntero "p"
+9.- //--> Imprimir el contenido del puntero "p"
+10.-//--> Inicializar la variable "y" con valor 20
+11.-//--> Asignar la direccion en memoria de la variable "y" al puntero "puntero".
+12.-//--> Imprimir el contenido del puntero "puntero"
+
+Ejercicio 2 :
+1.- //--> Crear un array de tipo entero de tamaño 5 de nombre "arrayInt"
+2.- //--> Inicializar el array "arrayInt" de 0 a 5, con estructura repetitiva.
+3.- //--> Crear un puntero hacia un entero de nombre "punteroInt" e inicializarlo con "arrayInt"
+4.- //--> Crear un puntero hacia un entero de nombre "punteroIntDos" e inicializarlo con la direccion del elemento (index) del "arrayInt"
+5.- //--> Imprimir el contenido del primer elemento del "arrayInt"
+6.- //--> Imprimir el contenido del primer elemento del "PunteroInt"
+7.- //--> Imprimir el contenido del primer elemento del "punteroIntDos"
+8.- //--> Imprimir el contenido del quinto elemento del "arrayInt"
+9.- //--> Imprimir el contenido del quinto elemento del puntero "punteroInt" con aritmetica de punteros
+10.- //--> Imprimir el contenido del quinto elemento del puntero "punteroIntDos" con aritmetica de punteros
+11.- //--> Imprimir contenido de todos los elementos del puntero "punteroIntDos" con aritmetica de punteros usando estructura repetitiva
+12.- //--> Imprimir contenido de todos los elementos del puntero "punteroIntDos" con aritmetica de punteros usando estructura repetitiva
