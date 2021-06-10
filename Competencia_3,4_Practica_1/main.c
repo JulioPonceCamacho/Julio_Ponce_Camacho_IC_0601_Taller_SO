@@ -71,12 +71,10 @@ int main(int argc, char *argv[]){
     //Cerrando archivos
     cerrar_archivo(archivo_Entrada,Entrada);
     cerrar_archivo(archivo_Salida,Salida);
-    //eliminiar elementos de la lista ligada
+    //eliminando la lista ligada
     for(j=1;j<=i;j++){
         LISTA = eliminar_indice(LISTA,1);
-    }
-    //eliminar lista ligada
-    free(LISTA);
+        }
     }
     else {
         printf("\nEl archivo [%s] no tiene ningun dato",Entrada);
