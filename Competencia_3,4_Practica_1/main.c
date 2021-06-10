@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
     char *Salida=argv[2];
     struct lista *LISTA=NULL;
     char palabras[TAM_NOMBRE];
-    int i=0;
+    int i=0,j=0;
     FILE *archivo_Entrada=NULL;
     FILE *archivo_Salida=NULL;
     
@@ -61,14 +61,21 @@ int main(int argc, char *argv[]){
         crear_archivo(Salida);
     }
     archivo_Salida=abrir_Archivo_lectura_escritura(Salida);
-    for(int j=1;j<=i;j++){
+    //Ciclo para escribir los elementos de la lista en el archivo de salida
+    for(j=1;j<=i;j++){
         fprintf(archivo_Salida,"%s\n",obtener_elemento(LISTA,j));
     }
     printf("\n\t____________________________________________________________________");
     printf("\n\t   NOTA: Los datos ordenados se han escrito en el archivo [%s] ",Salida);
     printf("\n\t--------------------------------------------------------------------\n");
+    //Cerrando archivos
     cerrar_archivo(archivo_Entrada,Entrada);
     cerrar_archivo(archivo_Salida,Salida);
+    //eliminiar elementos de la lista ligada
+    for(j=1;j<=i;j++){
+        LISTA = eliminar_indice(LISTA,1);
+    }
+    //eliminar lista ligada
     free(LISTA);
     }
     else {

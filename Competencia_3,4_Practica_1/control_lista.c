@@ -79,7 +79,7 @@ struct lista *eliminar_indice(struct lista *L, int indice){
                 }
                 L->elementos--;
                 if(L->elementos == 0){
-                    printf("\nLista ligada eliminada..");
+                    printf("\n--->>Lista ligada eliminada..");
                     free(L);
                     return NULL;
                 }
