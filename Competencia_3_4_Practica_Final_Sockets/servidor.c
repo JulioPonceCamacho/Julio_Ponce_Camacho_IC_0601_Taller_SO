@@ -159,7 +159,7 @@ void sumaNumero(char v1[], char v2[], char res[]){
     for( ;i>=0; i--,k--)
         c[k] = a[i];
     for( ;j>=0; j--,k--)
-        c [k] = b [j]; // Alto guardado
+        c [k] = b [j];
 
     //Manejando los decimos
     for( k=len-1; k>0; k--){
