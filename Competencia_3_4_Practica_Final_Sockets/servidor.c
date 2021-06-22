@@ -90,7 +90,7 @@ int main(int argc, char **argv)
         else
         { 
         printf("\n\t------------------------- Cliente conectado -------------------------\n");         
-        write(connfd, buff_tx, strlen(buff_tx)); //2
+        write(connfd, buff_tx, strlen(buff_tx));
         int ok=0;      
             while(1) //Lee informacion del cliente hasta que este se cierre
             {  
@@ -112,18 +112,18 @@ int main(int argc, char **argv)
                     ok++;
                     
                     if(ok==2){
-                        strcpy(v1,buff_rx); //3
+                        strcpy(v1,buff_rx);
                         printf("[SERVER] Valor 1 recibido= %s (Longitud: %d digitos) \n", v1,strlen(v1));
                         memset(buff_rx,0,strlen(buff_rx));
                     }
                     else if (ok==3){
-                        strcpy(v2,buff_rx); //4
+                        strcpy(v2,buff_rx);
                         memset(buff_rx,0,strlen(buff_rx));
                         printf("[SERVER] Valor 2 recibido= %s (Longitud: %d digitos)\n", v2,strlen(v2));
                         sumaNumero(v1,v2,result);
-                        write(connfd, result, sizeof(result)); //5
+                        write(connfd, result, sizeof(result));
                         printf("\n[SERVER]\t----> Resultado enviado al cliente <-------\n\n");
-                        write(connfd, adios, sizeof(adios)); //6
+                        write(connfd, adios, sizeof(adios));
                         limpiarVariables(v1,v2,result);
                     }
                     else  { 
