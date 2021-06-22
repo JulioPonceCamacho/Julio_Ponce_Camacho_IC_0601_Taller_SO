@@ -26,6 +26,8 @@ int main(int argc, char **argv)
     }
     const char *SERV_HOST_ADDR=argv[1];
     int SERV_PORT=atoi(argv[2]);
+    printf("\n->Host: %s",SERV_HOST_ADDR);
+    printf("\n->Puerto: %d \n",SERV_PORT);
     int sockfd, connfd ;  //Descriptores del listen del socket y la coneccion del socket
     unsigned int len;     //Longitud de dirección address del cliente
     struct sockaddr_in server, cliente; 
@@ -76,7 +78,6 @@ int main(int argc, char **argv)
     {
         printf("[SERVER]: Escuchando en el puerto %d \n\n", ntohs(server.sin_port) ); 
     }
-    
     len = sizeof(cliente); 
       while(1) //Espera la conexion de un socket ciclicamente.
       {
@@ -137,7 +138,7 @@ int main(int argc, char **argv)
     }    
 } 
 void sumaNumero(char v1[], char v2[], char res[]){
-    int m,n,i,j,k,len;
+    int A,B,C,len,m,n;
     m=strlen(v1);
     n=strlen(v2);
 
@@ -145,37 +146,32 @@ void sumaNumero(char v1[], char v2[], char res[]){
     if(m>n) len=m;
     else len=n;
 
-    int a[m],b[n],c[len];    
+    int AUX1[m],AUX2[n],AUX3[len];    
 
     //Convertimos el los valores almacenados en la cadena restandoles '0' (Tiene valor en ASCII)
-    for(i=0; i<m; i++) a[i]=v1[i]-'0'; //i=m;
-    for(j=0; j<n; j++) b[j]=v2[j]-'0'; //j=n;
+    for(A=0; A<m; A++) AUX1[A]=v1[A]-'0';
+    for(B=0; B<n; B++) AUX2[B]=v2[B]-'0';
 
-    j=n-1; k=len-1;
-    for(i=m-1; i>=0 && j>=0; i--){
-        c[k] = a[i] + b[j];
-        j--; k--; 
-    }
-    for( ;i>=0; i--,k--)
-        c[k] = a[i];
-    for( ;j>=0; j--,k--)
-        c [k] = b [j];
+    B=n-1; C=len-1;
+    for(A=m-1; A>=0 && B>=0; A--){ AUX3[C] = AUX1[A] + AUX2[B]; B--; C--;  }
+    for( ;A>=0; A--,C--)AUX3[C] = AUX1[A];
+    for( ;A>=0; B--,C--)AUX3[C] = AUX2[B];
 
     //Manejando los decimos
-    for( k=len-1; k>0; k--){
-        if( c[k] >9 ){
-            c[k] = c[k]%10;
-            c[k-1] += 1; 
+    for( C=len-1; C>0; C--){
+        if( AUX3[C] >9 ){
+            AUX3[C] = AUX3[C]%10;
+            AUX3[C-1]+=1; 
          }
     }
-    i=0;
-    for( k=0; k<len; k++){
-        if(c[k]>9){
-           res[i]='1';
-           i++;
-           res[i]=(c[k]-10)+'0'; 
-        }else res[i]=c[k]+'0';
-        i++;
+    A=0;
+    for(C=0; C<len; C++){
+        if(AUX3[C]>9){
+           res[A]='1';
+           A++;
+           res[A]=(AUX3[C]-10)+'0'; 
+        }else res[A]=AUX3[C]+'0';
+        A++;
     }
     
 }

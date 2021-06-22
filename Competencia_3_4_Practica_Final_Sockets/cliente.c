@@ -54,7 +54,7 @@ int main(int argc, char **argv)
         printf("  Conexion con el servidor fallida...\n");  
         return -1;
     } 
-    printf("\t\n----------------------- Conexion establecida ------------------------\n");   
+    printf("\n\t----------------------- Conexion establecida ------------------------\n");   
     //Envio y recibo de datos
     write(sockfd, buf_tx, sizeof(buf_tx));
     read(sockfd, buf_rx, sizeof(buf_rx)); 
