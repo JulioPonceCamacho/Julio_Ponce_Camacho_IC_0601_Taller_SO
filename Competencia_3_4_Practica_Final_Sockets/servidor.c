@@ -120,7 +120,8 @@ int main(int argc, char **argv)
                         strcpy(v2,buff_rx);
                         memset(buff_rx,0,strlen(buff_rx));
                         printf("[SERVER] Valor 2 recibido= %s (Longitud: %d digitos)\n", v2,strlen(v2));
-                        sumaNumero(v1,v2,result);
+			if (strlen(v1)>=strlen(v2))sumaNumero(v1,v2,result);
+			else sumaNumero(v2,v1,result);
                         write(connfd, result, sizeof(result));
                         printf("\n[SERVER]\t----> Resultado enviado al cliente <-------\n\n");
                         write(connfd, adios, sizeof(adios));
